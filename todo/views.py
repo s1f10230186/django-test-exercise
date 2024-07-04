@@ -12,7 +12,7 @@ def index(request):
     if request.GET.get('order')=='due':
         tasks=Task.objects.order_by('due_at')
     else:
-        tasks=Task.objects_by('-posted_at')
+        tasks=Task.objects.order_by('-posted_at')
 
     context={
         'tasks' : tasks
